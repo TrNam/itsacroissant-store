@@ -3,12 +3,14 @@ import { Urbanist } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import "./globals.css";
+import ModalProvider from "@/providers/modal-provider";
+import ToastProvider from "@/providers/toast-provider";
 
 const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "itsacroissant",
-  description: "itsacroissant-store",
+  title: "maestro",
+  description: "maestro-store",
 };
 
 export default function RootLayout({
@@ -19,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ModalProvider/>
+        <ToastProvider/>
         <Navbar/>
         {children}
         <Footer/>
